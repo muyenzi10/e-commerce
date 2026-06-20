@@ -1,0 +1,48 @@
+/* Navbar spacing */
+.custom-navbar {
+  padding: 12px 0;
+}
+
+/* Brand style */
+.brand {
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Nav links */
+.nav-link-custom {
+  margin-right: 15px;
+  color: #fff !important;
+  position: relative;
+  transition: 0.3s;
+}
+
+.nav-link-custom:hover {
+  color: #00d4ff !important;
+}
+/* Sign in button style */
+.sign-btn {
+  background: #00d4ff;
+  color: black !important;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.sign-btn:hover {
+  background: #00aacc;
+  color: white !important;
+}
+.fa-cart-arrow-down {
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-right: 8px;
+}
+
+.fa-cart-arrow-down:hover {
+  color: #00d4ff;
+  transform: scale(1.2);
+}

@@ -1,50 +1,50 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import Nav from "./Nav";
-import { CiMenuFries, CiShoppingCart, CiUser } from "react-icons/ci";
-import { IoMdSearch } from "react-icons/io";
+import React from 'react'
+import './Header.css'
 
 const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const ToggleMenu = ()=>{
-    setMenuOpen((prev)=> !prev)
-  }
-
   return (
-    <header className="py-3 bg-white px-4">
-      <div className="container flex items-center justify-between">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark custom-navbar">
+      <div className="container">
 
-        {/* LEFT - LOGO */}
-        <Link to="/" className="text-[20px] text-[#73a1f8] font-bold">
-          shoppier
-        </Link>
+        {/* Brand */}
+        <a className="navbar-brand brand" href="/">
+          Shoppier
+        </a>
 
-        {/* CENTER - NAV */}
-        <div>
-          <Nav />
-        </div>
+        {/* Toggle */}
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
 
-        {/* RIGHT - ICONS */}
-        <div className="flex items-center gap-4 text-[20px]">
-         {!menuOpen &&(
-           <CiMenuFries
-            className="cursor-pointer xl:hidden text-2xl" onClick={ToggleMenu}
-          />
-         )
+        {/* Links */}
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav ms-auto align-items-center">
 
-         }
-          <IoMdSearch className="cursor-pointer" />
+            <li className="nav-item">
+              <a className="nav-link nav-link-custom" href="/cart">
+                <i class="fa-solid fa-cart-arrow-down"></i>
+                Cart
+              </a>
+            </li>
 
-          <CiShoppingCart className="cursor-pointer" />
-          <CiUser className="cursor-pointer"
-          />
-          
+            <li className="nav-item">
+              <a className="nav-link sign-btn" href="/login">
+              <i class="fa-solid fa-user"></i>
+                Sign in
+              </a>
+            </li>
 
+          </ul>
         </div>
 
       </div>
-    </header>
-  );
-};
+    </nav>
+  )
+}
 
-export default Header;
+export default Header
